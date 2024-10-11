@@ -1,0 +1,400 @@
+Release 10.1 - xst K.31 (nt64)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/Jerry Xu/Desktop/OTMB_2005/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/Jerry Xu/Desktop/OTMB_2005/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: Top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top"
+Output Format                      : NGC
+Target Device                      : xc2v4000-5-ff1152
+
+---- Source Options
+Top Module Name                    : Top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : Top.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "clock_divider.v" in library work
+Compiling verilog file "Top.v" in library work
+Module <clock_divider> compiled
+Module <Top> compiled
+No errors in compilation
+Analysis of file <"Top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Top> in library <work>.
+
+Analyzing hierarchy for module <clock_divider> in library <work> with parameters.
+	DIVISOR = "0000000000000000001111101000"
+
+Analyzing hierarchy for module <clock_divider> in library <work> with parameters.
+	DIVISOR = "0000000011110100001001000000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Top>.
+Module <Top> is correct for synthesis.
+ 
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <uibufg_19p> in unit <Top>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <uibufg_19p> in unit <Top>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <uibufg_19p> in unit <Top>.
+Analyzing module <clock_divider.1> in library <work>.
+	DIVISOR = 28'b0000000000000000001111101000
+Module <clock_divider.1> is correct for synthesis.
+ 
+Analyzing module <clock_divider.2> in library <work>.
+	DIVISOR = 28'b0000000011110100001001000000
+Module <clock_divider.2> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clock_divider_1>.
+    Related source file is "clock_divider.v".
+    Found 1-bit register for signal <clock_out>.
+    Found 28-bit comparator less for signal <clock_out$cmp_lt0000> created at line 38.
+    Found 28-bit up counter for signal <counter>.
+    Found 28-bit comparator greatequal for signal <counter$cmp_ge0000> created at line 35.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <clock_divider_1> synthesized.
+
+
+Synthesizing Unit <clock_divider_2>.
+    Related source file is "clock_divider.v".
+    Found 1-bit register for signal <clock_out>.
+    Found 28-bit comparator less for signal <clock_out$cmp_lt0000> created at line 38.
+    Found 28-bit up counter for signal <counter>.
+    Found 28-bit comparator greatequal for signal <counter$cmp_ge0000> created at line 35.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <clock_divider_2> synthesized.
+
+
+Synthesizing Unit <Top>.
+    Related source file is "Top.v".
+Unit <Top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 28-bit up counter                                     : 2
+# Registers                                            : 2
+ 1-bit register                                        : 2
+# Comparators                                          : 4
+ 28-bit comparator greatequal                          : 2
+ 28-bit comparator less                                : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2v4000.nph' in environment C:\Xilinx\10.1\ISE.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 28-bit up counter                                     : 2
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+# Comparators                                          : 4
+ 28-bit comparator greatequal                          : 2
+ 28-bit comparator less                                : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 58
+ Flip-Flops                                            : 58
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Top.ngr
+Top Level Output File Name         : Top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 242
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 62
+#      LUT2                        : 4
+#      LUT3                        : 3
+#      LUT4                        : 19
+#      MUXCY                       : 92
+#      VCC                         : 1
+#      XORCY                       : 54
+# FlipFlops/Latches                : 58
+#      FDR                         : 58
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 9
+#      IBUFG                       : 1
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2v4000ff1152-5 
+
+ Number of Slices:                       51  out of  23040     0%  
+ Number of Slice Flip Flops:             58  out of  46080     0%  
+ Number of 4 input LUTs:                 94  out of  46080     0%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    824     1%  
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+tmb_clock0                         | IBUFG+BUFG             | 58    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.635ns (Maximum Frequency: 215.761MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.840ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'tmb_clock0'
+  Clock period: 4.635ns (frequency: 215.761MHz)
+  Total number of paths / destination ports: 2429 / 114
+-------------------------------------------------------------------------
+Delay:               4.635ns (Levels of Logic = 11)
+  Source:            clk40_led/counter_0 (FF)
+  Destination:       clk40_led/counter_0 (FF)
+  Source Clock:      tmb_clock0 rising
+  Destination Clock: tmb_clock0 rising
+
+  Data Path: clk40_led/counter_0 to clk40_led/counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.494   0.858  clk40_led/counter_0 (clk40_led/counter_0)
+     LUT4:I0->O            1   0.382   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_lut<0> (clk40_led/Mcompar_clock_out_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.259   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<0>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<0>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<1>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<1>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<2>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<2>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<3>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<3>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<4>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<4>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<5>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<5>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<6>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<6>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<7>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<7>1)
+     MUXCY:CI->O           1   0.046   0.000  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<8>_0 (clk40_led/Mcompar_clock_out_cmp_lt0000_cy<8>1)
+     MUXCY:CI->O          28   1.093   0.937  clk40_led/Mcompar_clock_out_cmp_lt0000_cy<9>_0 (clk40_led/counter_cmp_ge0000)
+     FDR:R                     0.244          clk40_led/counter_0
+    ----------------------------------------
+    Total                      4.635ns (2.840ns logic, 1.795ns route)
+                                       (61.3% logic, 38.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'tmb_clock0'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.840ns (Levels of Logic = 1)
+  Source:            clk40_led/clock_out (FF)
+  Destination:       led_fp<0> (PAD)
+  Source Clock:      tmb_clock0 rising
+
+  Data Path: clk40_led/clock_out to led_fp<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.494   0.450  clk40_led/clock_out (clk40_led/clock_out)
+     OBUF:I->O                 3.896          led_fp_0_OBUF (led_fp<0>)
+    ----------------------------------------
+    Total                      4.840ns (4.390ns logic, 0.450ns route)
+                                       (90.7% logic, 9.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.29 secs
+ 
+--> 
+
+Total memory usage is 315820 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

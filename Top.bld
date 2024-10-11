@@ -1,0 +1,35 @@
+Release 10.1 ngdbuild K.31 (nt64)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\10.1\ISE\bin\nt64\unwrapped\ngdbuild.exe -ise
+C:/Users/Jerry Xu/Desktop/OTMB_2005/OTMB_2005.ise -intstyle ise -dd _ngo -nt
+timestamp -i -p xc2v4000-ff1152-5 Top.ngc Top.ngd
+
+Reading NGO file "C:/Users/Jerry Xu/Desktop/OTMB_2005/Top.ngc" ...
+Reading in constraint information from 'tmb_virtex2_pinout.ucf'...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+Checking Partitions ...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 126348 kilobytes
+
+Writing NGD file "Top.ngd" ...
+
+Writing NGDBUILD log file "Top.bld"...

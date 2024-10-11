@@ -1,0 +1,17 @@
+//! **************************************************************************
+// Written by: Map K.31 on Fri Oct 11 17:09:18 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led_fp<0>" LOCATE = SITE "AG10" LEVEL 1;
+COMP "led_fp<1>" LOCATE = SITE "AH11" LEVEL 1;
+COMP "led_fp<2>" LOCATE = SITE "AK7" LEVEL 1;
+COMP "led_fp<3>" LOCATE = SITE "AK8" LEVEL 1;
+COMP "led_fp<4>" LOCATE = SITE "AK28" LEVEL 1;
+COMP "led_fp<5>" LOCATE = SITE "AL29" LEVEL 1;
+COMP "led_fp<6>" LOCATE = SITE "AG24" LEVEL 1;
+COMP "led_fp<7>" LOCATE = SITE "AG25" LEVEL 1;
+COMP "tmb_clock0" LOCATE = SITE "AF18" LEVEL 1;
+NET "clk401" BEL "clk40_BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+
