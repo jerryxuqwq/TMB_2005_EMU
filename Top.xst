@@ -1,5 +1,5 @@
-set -tmpdir "C:/Users/Jerry Xu/Desktop/OTMB_2005/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/Jerry Xu/Desktop/OTMB_2005/xst"
+set -tmpdir "C:/Users/Jerry Xu/Desktop/TMB_2005/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Jerry Xu/Desktop/TMB_2005/xst"
 run
 -ifn Top.prj
 -ifmt mixed

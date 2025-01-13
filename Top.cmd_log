@@ -19,3 +19,5 @@ map -ise "C:/Users/Jerry Xu/Desktop/OTMB_2005/OTMB_2005.ise" -intstyle ise -p xc
 par -ise "C:/Users/Jerry Xu/Desktop/OTMB_2005/OTMB_2005.ise" -w -intstyle ise -ol std -t 1 Top_map.ncd Top.ncd Top.pcf
 trce -ise "C:/Users/Jerry Xu/Desktop/OTMB_2005/OTMB_2005.ise" -intstyle ise -e 3 -s 5 -xml Top Top.ncd -o Top.twr Top.pcf -ucf tmb_virtex2_pinout.ucf
 bitgen -ise "C:/Users/Jerry Xu/Desktop/OTMB_2005/OTMB_2005.ise" -intstyle ise -f Top.ut Top.ncd
+xst -ise "C:/Users/Jerry Xu/Desktop/TMB_2005/TMB_2005.ise" -intstyle ise -ifn "C:/Users/Jerry Xu/Desktop/TMB_2005/Top.xst" -ofn "C:/Users/Jerry Xu/Desktop/TMB_2005/Top.syr"
+ngdbuild -ise "C:/Users/Jerry Xu/Desktop/TMB_2005/TMB_2005.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2v4000-ff1152-5 "Top.ngc" Top.ngd

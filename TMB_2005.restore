@@ -737,9 +737,9 @@ proc dpm_DisplayQuestionDialog { sMessageGUI sMessageCmdLine defaultValue { hasC
 
 # Call this proc to restore the ISE project.
 proc restore { { project_dir "" } } {
-   set script_file "OTMB_2005.restore"
-   set project_file "OTMB_2005.ise"
-   set backup_file "OTMB_2005.fail"
+   set script_file "TMB_2005.restore"
+   set project_file "TMB_2005.ise"
+   set backup_file "TMB_2005.fail"
    set old_working_dir [pwd]
    # Make sure a project isn't already open.
    if {[IsProjectOpen]} {
@@ -835,17 +835,13 @@ proc restore { { project_dir "" } } {
     RestoreProjectSettings $iProjHelper $project_settings 
   } "A problem occured while restoring project settings."
 
-  set user_files { 
-      "Top.v" 
-      "clock_divider.v" 
-      "tmb_virtex2_pinout.ucf"}
+  set user_files {}
 
   HandleException {
     AddUserFiles $iProjHelper $user_files
   } "A problem occured while restoring user files."
 
-  set imported_files { 
-      "Top_guide.ncd"}
+  set imported_files {}
 
   set origination 2
 
